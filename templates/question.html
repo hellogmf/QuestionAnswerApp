@@ -1,0 +1,23 @@
+{% from "show_links.html" import show_links %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="header">Q&A</div>
+    {{ show_links(user) }}
+        <h1>{{ question['question_text'] }}</h1>
+        <p>{{ question['answer_text'] }}</p>
+        <p><a>Asked By: {{ question['asker_name'] }}</a></p>
+        <p><a>Answered By: {{ question['expert_name'] }}</a></p>
+      </div>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>

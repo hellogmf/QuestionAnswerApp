@@ -1,0 +1,26 @@
+{% from "show_links.html" import show_links %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+         <div class="header">Q&A</div>
+         {{ show_links(user) }}
+        <h1>Answered Questions</h1>
+        <div class="container">
+          {% for q in question %}
+            <a href="{{url_for("question", question_id = q["question_id"])}}">
+              <h4>{{q["question_text"]}}</h4>
+              <p>Asked by: {{q["asker_name"]}}</p>
+              <p>Answered by: {{q["expert_name"]}}</p>
+            </a>
+            <br>
+            {% endfor %}
+          </div><br>
+  </body>
+</html>
