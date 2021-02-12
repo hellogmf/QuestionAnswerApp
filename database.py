@@ -4,7 +4,7 @@ import sqlite3
 
 def connect_db():
     sql = sqlite3.connect(
-        "/Users/bhaskar/Documents/PythonProjects/StudentProjects/Jahaan/Forum/questions.db")
+        "./questions.db")
     print("True")
     sql.row_factory = sqlite3.Row
     return sql
